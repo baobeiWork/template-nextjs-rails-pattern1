@@ -1,0 +1,1 @@
+# template-nextjs-rails-pattern1
