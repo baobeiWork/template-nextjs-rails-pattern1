@@ -1,0 +1,50 @@
+[
+  {
+    "name": "backend",
+    "image": "${image}",
+    "cpu": ${cpu},
+    "memory": ${memory},
+    "essential": true,
+    "portMappings": [
+      {
+        "containerPort": ${container_port},
+        "hostPort": ${container_port}
+      }
+    ],
+    "environment": [
+      {
+        "name": "DATABASE_HOST",
+        "value": "${database_host}"
+      },
+      {
+        "name": "DATABASE_NAME",
+        "value": "${database_name}"
+      },
+      {
+        "name": "DATABASE_PASSWORD",
+        "value": "${database_password}"
+      },
+      {
+        "name": "DATABASE_USER",
+        "value": "${database_user}"
+      },
+      {
+        "name": "RAILS_ENV",
+        "value": "${rails_env}"
+      },
+      {
+        "name": "SYSTEM_DOMAIN",
+        "value": "${system_domain}"
+      }
+    ],
+    "command": ["entrypoint.sh"],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "${awslogs_group}",
+        "awslogs-region": "ap-northeast-1",
+        "awslogs-stream-prefix": "ecs"
+      }
+    }
+  }
+]

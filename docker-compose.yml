@@ -1,0 +1,66 @@
+version: '3'
+services:
+  db:
+    image: mysql:8.4
+    tty: true
+    volumes:
+      - mysql-data:/var/lib/mysql
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USERNAME}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    restart: always
+
+  backend:
+    build: 
+      context: .
+      dockerfile: ./infrastructure/docker/backend/Dockerfile
+    tty: true
+    volumes:
+      - ./backend:/${SYSTEM_NAME}
+    ports:
+      - "3000:3000"
+    environment: 
+      - SYSTEM_NAME=${SYSTEM_NAME}
+      - SYSTEM_DOMAIN=${SYSTEM_DOMAIN}
+      - DATABASE_USER=${MYSQL_ROOT_USER}
+      - DATABASE_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - DATABASE_NAME=${MYSQL_DATABASE}
+      - DATABASE_HOST=db
+      - RAILS_ENV=${ENVIRONMENT}
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      - db
+      - redis
+
+  frontend:
+    build:
+      context: .
+      dockerfile: ./infrastructure/docker/frontend/Dockerfile
+    tty: true
+    volumes:
+      - ./frontend:/${SYSTEM_NAME}
+    ports:
+      - "8000:8000"
+    environment: 
+      - SYSTEM_NAME=${SYSTEM_NAME}
+      - SYSTEM_DOMAIN=${SYSTEM_DOMAIN}
+      - NEXT_ENV=${ENVIRONMENT}
+      - NEXT_PUBLIC_API_URL=${NUXT_PUBLIC_API_URL}
+      - NEXT_PUBLIC_IS_API_MOCKED=${NUXT_PUBLIC_IS_API_MOCKED}
+    depends_on:
+      - backend
+
+volumes:
+  mysql-data:
