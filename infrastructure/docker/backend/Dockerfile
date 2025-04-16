@@ -47,7 +47,7 @@ RUN bundle install
 COPY ./backend ./
 
 # Copy shell scripts and make them executable
-COPY ./infrastructure/docker/backend/shell/* /usr/bin/
+COPY ./infrastructure/shell/backend/entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/*
 
 ENTRYPOINT ["entrypoint.sh"]
