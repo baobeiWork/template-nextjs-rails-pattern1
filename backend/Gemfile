@@ -24,25 +24,29 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'rswag'
 gem 'rswag-api'
 gem 'rswag-ui'
-gem 'rswag-specs'
+
 
 # Job Management
 gem 'sidekiq'
 
 # License Management
-gem 'bundler-licenses'
+# gem 'bundler-licenses'
 
 # AWS
 gem 'aws-sdk-rails'
 gem 'aws-sdk-ses'
 gem 'http'
 
+# Test
+gem 'rspec_html_reporter'
+gem 'rspec-rails'
+gem 'rswag-specs'
+
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
   gem 'faker'
-  gem 'gimei'
-  gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'gimei'
 end
 
 group :test do
