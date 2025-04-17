@@ -38,13 +38,13 @@ RUN gem install bundler -v "${BUNDLER_VERSION}" && \
     gem install rails
 
 # Copy Gemfile and Gemfile.lock
-COPY ./backend/Gem* ./
+COPY ./backend/Gem* /${SYSTEM_NAME}
 
 # Run bundle install
 RUN bundle install
 
 # Copy the rest of the application code
-COPY ./backend ./
+COPY ./backend /${SYSTEM_NAME}
 
 # Copy shell scripts and make them executable
 COPY ./infrastructure/shell/backend/entrypoint.sh /usr/bin/

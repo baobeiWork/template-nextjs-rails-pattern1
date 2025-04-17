@@ -25,10 +25,10 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /${SYSTEM_NAME}
 
 # Copy package.json and yarn.lock
-COPY ./frontend/package.json ./frontend/yarn.lock ./
+COPY ./frontend/package.json ./frontend/yarn.lock /${SYSTEM_NAME}
 
 # Copy the rest of the application code
-COPY ./frontend ./
+COPY ./frontend /${SYSTEM_NAME}
 
 # Copy shell scripts and make them executable
 COPY ./infrastructure/shell/frontend/entrypoint.sh /usr/bin/
