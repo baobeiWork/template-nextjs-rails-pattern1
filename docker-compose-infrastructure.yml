@@ -1,0 +1,23 @@
+version: '3'
+services:
+  infrastructure:
+    build:
+      context: .
+      dockerfile: ./infrastructure/docker/infrastructure/Dockerfile
+    environment:
+      - SYSTEM_NAME=${SYSTEM_NAME}
+      - SYSTEM_DOMAIN=${SYSTEM_DOMAIN}
+      - INFRASTRUCTURE_HOME=${INFRASTRUCTURE_HOME}
+      - AWS_ACCESS_KEY=${AWS_ACCESS_KEY}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}
+      - TF_VAR_SYSTEM_NAME=${SYSTEM_NAME}
+      - TF_VAR_SYSTEM_REGION=${AWS_DEFAULT_REGION}
+      - TF_VAR_SYSTEM_AZ=${AWS_DEFAULT_AZ}
+      - TF_VAR_AWS_ACCESS_KEY=${AWS_ACCESS_KEY}
+      - TF_VAR_AWS_SECRET_KEY=${AWS_SECRET_ACCESS_KEY}
+    working_dir: /asset_compass/infrastructure
+    volumes:
+      - ./:/asset_compass
+      - /var/run/docker.sock:/var/run/docker.sock 
+    command: /usr/bin/entrypoint.sh
