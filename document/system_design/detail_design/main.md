@@ -1,0 +1,1 @@
+# 詳細設計書（Detail Design）
