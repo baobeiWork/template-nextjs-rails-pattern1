@@ -1,5 +1,6 @@
 be-reset: ## backend ディレクトリをリセット [ Gemfile / Gemfile.lock 保持 ] ()
-	find ./backend -mindepth 1 ! \
+	find ./backend \
+		-mindepth 1 ! \
 		-name 'Gemfile' ! \
 		-name 'Gemfile.lock' \
 		-exec rm -rf {} +
@@ -27,7 +28,7 @@ be-init: ## backend 初期構築 [ Rails new apiモード ] ()
 		initial-temp/.gitignore \
 		initial-temp/Gemfile \
 		initial-temp/Gemfile.lock
-	docker exec $(DOCKER_BACKEND_CONTAINER) /bin/bash -c 'mv /backend/initial-temp/* backend/'
+	docker exec $(DOCKER_BACKEND_CONTAINER) /bin/bash -c 'mv /backend/initial-temp/* /backend/'
 	docker exec $(DOCKER_BACKEND_CONTAINER) rmdir initial-temp
 	docker exec $(DOCKER_BACKEND_CONTAINER) bundle install
 	
