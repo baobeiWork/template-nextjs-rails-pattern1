@@ -1,0 +1,40 @@
+# ==============================================
+# Common
+# ==============================================
+.env
+
+# Ignore git directory.
+.git/
+
+# ==============================================
+# Backend 
+# ==============================================
+# Ignore bundler config.
+backend/.bundle
+
+# Ignore all default key files.
+backend/config/master.key
+backend/config/credentials/*.key
+
+# Ignore all logfiles and tempfiles.
+backend/log/*
+backend/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore pidfiles, but keep the directory.
+backend/tmp/pids/*
+!/tmp/pids/.keep
+
+# Ignore storage (uploaded files in development and any SQLite databases).
+backend/storage/*
+!/storage/.keep
+backend/tmp/storage/*
+!/tmp/storage/.keep
+
+# Ignore assets.
+backend/node_modules/
+backend/public/assets
+
+# Ignore Kamal files.
+backend/config/deploy*.yml

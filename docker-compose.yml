@@ -1,0 +1,75 @@
+version: '3'
+services:
+  mysql:
+    container_name: ${SYSTEM_NAME}_mysql 
+    image: mysql:8.4
+    tty: true
+    volumes:
+      - mysql-data:/var/lib/mysql
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USERNAME}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+
+  redis:
+    container_name: ${SYSTEM_NAME}_redis
+    image: redis:7
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    restart: always
+
+  backend:
+    container_name: ${SYSTEM_NAME}_backend
+    build: 
+      context: .
+      dockerfile: ./infrastructure/docker/backend/Dockerfile
+    tty: true
+    volumes:
+      - ./backend:/backend
+      - ./document/swagger:/document/swagger
+    ports:
+      - "3000:3000"
+    environment: 
+      - SYSTEM_NAME=${SYSTEM_NAME}
+      - SYSTEM_DOMAIN=${SYSTEM_DOMAIN}
+      - DATABASE_USER=${MYSQL_ROOT_USER}
+      - DATABASE_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - DATABASE_NAME=${MYSQL_DATABASE}
+      - DATABASE_HOST=db
+      - RAILS_ENV=${RAILS_ENV}
+      - RAILS_TEST_EXPORT_ROOT=./document/test/unit/backend
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      - mysql
+      - redis
+
+  frontend:
+    container_name: ${SYSTEM_NAME}_frontend
+    build:
+      context: .
+      dockerfile: ./infrastructure/docker/frontend/Dockerfile
+    tty: true
+    volumes:
+      - ./frontend:/frontend
+      - ./document/swagger:/document/swagger
+    ports:
+      - "8000:8000"
+    environment: 
+      - SYSTEM_NAME=${SYSTEM_NAME}
+      - SYSTEM_DOMAIN=${SYSTEM_DOMAIN}
+      - NEXT_ENV=${NEXT_ENV}
+      - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
+      - NEXT_PUBLIC_IS_API_MOCKED=${NEXT_PUBLIC_IS_API_MOCKED}
+      - NEXT_PUBLIC_TEST_EXPORT_ROOT=./document/test/unit/frontend
+    depends_on:
+      - backend
+
+volumes:
+  mysql-data:
+  redis-data:

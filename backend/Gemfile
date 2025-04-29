@@ -1,0 +1,51 @@
+source "https://rubygems.org"
+
+ruby "3.3.3"
+gem "rails", "~> 7.1.3", ">= 7.1.3.4"
+
+# Web Server
+gem "puma", ">= 5.0"
+
+# DB 
+## Model Management
+gem 'ridgepole'
+gem "mysql2", ">= 0.5"
+gem 'rails-i18n'
+
+## Model Version Management
+gem 'paper_trail'
+
+# Authorize
+gem 'jwt'
+gem 'bcrypt', '~> 3.1.7'
+
+# API Management
+gem 'rswag'
+gem 'rswag-api'
+gem 'rswag-ui'
+
+# Job Management
+gem 'sidekiq'
+
+# License Management
+# gem 'bundler-licenses'
+
+# AWS
+gem 'aws-sdk-rails'
+gem 'aws-sdk-ses'
+gem 'http'
+
+# Test
+gem 'rspec_html_reporter'
+gem 'rspec-rails'
+gem 'rswag-specs'
+
+group :development, :test do
+  gem "debug", platforms: %i[ mri windows ]
+  gem 'faker'
+  gem 'gimei'
+end
+
+group :test do
+  gem 'database_rewinder'
+end
