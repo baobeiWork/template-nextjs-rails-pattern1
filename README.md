@@ -50,6 +50,7 @@
 
 * ローカル開発環境の構築
   * [構築手順](./document/deploy/local/main.md)
+  
 * AWS環境の構築
   * [初期構築手順](./document/deploy/aws_initial/main.md)
   * [デプロイ手順](./document/deploy/aws_subsequent/main.md)

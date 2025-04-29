@@ -36,8 +36,5 @@ backend/tmp/storage/*
 backend/node_modules/
 backend/public/assets
 
-# Ignore CI service files.
-/.github
-
 # Ignore Kamal files.
 backend/config/deploy*.yml
