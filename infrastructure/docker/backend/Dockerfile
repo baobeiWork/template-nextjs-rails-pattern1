@@ -31,20 +31,22 @@ RUN apt-get update && apt-get install -y \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /${SYSTEM_NAME}
+# Create Work Dir and Documents Dir
+RUN mkdir -p /document/swagger
+WORKDIR /backend
 
 # Install Bundler and Rails
 RUN gem install bundler -v "${BUNDLER_VERSION}" && \
     gem install rails
 
 # Copy Gemfile and Gemfile.lock
-COPY ./backend/Gem* /${SYSTEM_NAME}
+COPY ./backend/Gem* /backend/
 
 # Run bundle install
 RUN bundle install
 
 # Copy the rest of the application code
-COPY ./backend /${SYSTEM_NAME}
+COPY ./backend /backend
 
 # Copy shell scripts and make them executable
 COPY ./infrastructure/shell/backend/entrypoint.sh /usr/bin/

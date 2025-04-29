@@ -3,11 +3,10 @@ reset-be: ## backend ディレクトリをリセット [ Gemfile / Gemfile.lock 
 		-name 'Gemfile' ! \
 		-name 'Gemfile.lock' \
 		-exec rm -rf {} +
-	@$(MAKE) switch-entrypoint-be initial
 
 init-be: ## backend 初期構築 [ Rails new apiモード ] ()
 	@echo "backend 初期化を実行します"
-	docker exec $(DOCKER_BACKEND_CONTAINER) rails new ${SYSTEM_NAME} \
+	docker exec $(DOCKER_BACKEND_CONTAINER) rails new . \
 	--api \
 	--database=mysql \
 	--skip-javascript \
@@ -24,6 +23,8 @@ init-be: ## backend 初期構築 [ Rails new apiモード ] ()
 		test \
 		app/assets \
 		app/helpers \
+		script \
+		.kamal \
 		.dockerignore \
 		.gitattributes \
 		.gitignore

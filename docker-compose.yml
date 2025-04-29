@@ -32,7 +32,7 @@ services:
     tty: true
     volumes:
       - ./backend:/backend
-      - ./document/swagger:/backend/document/swagger
+      - ./document/swagger:/document/swagger
     ports:
       - "3000:3000"
     environment: 
@@ -57,7 +57,7 @@ services:
     tty: true
     volumes:
       - ./frontend:/frontend
-      - ./document/swagger:/frontend/document/swagger
+      - ./document/swagger:/document/swagger
     ports:
       - "8000:8000"
     environment: 
