@@ -22,13 +22,15 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /${SYSTEM_NAME}
+# Create Work Dir and Documents Dir
+RUN mkdir -p /document/swagger
+WORKDIR /frontend
 
 # Copy package.json and yarn.lock
-COPY ./frontend/package.json ./frontend/yarn.lock /${SYSTEM_NAME}
+COPY ./frontend/package.json ./frontend/yarn.lock /frontend/
 
 # Copy the rest of the application code
-COPY ./frontend /${SYSTEM_NAME}
+COPY ./frontend /frontend
 
 # Copy shell scripts and make them executable
 COPY ./infrastructure/shell/frontend/entrypoint.sh /usr/bin/
