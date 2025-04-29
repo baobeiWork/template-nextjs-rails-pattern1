@@ -20,8 +20,7 @@
 ## 仕様書
 ---
 
-### 設計書（Disign）
-* [基本設計書（Basic Design）](./document/system_design/basic_design/main.md)
+### 設計書（Design）
 * [詳細設計書（Detail Design）](./document/system_design/detail_design/main.md)
 
 ### 画面
