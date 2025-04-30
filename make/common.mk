@@ -17,6 +17,22 @@ up: ## docker-compose upを実行
 show: ## コンテナ一覧の確認
 	docker ps -a 
 
+all-init: ## backendコンテナ・frontendコンテナの初期化を実行
+	@$(MAKE) init-be
+	@$(MAKE) init-fe
+
+all-stop: ## コンテナすべて停止	
+	docker stop ${DOCKER_BACKEND_CONTAINER} 
+	docker stop ${DOCKER_FRONTEND_CONTAINER} 
+	docker stop ${DOCKER_MYSQL_CONTAINER} 
+	docker stop ${DOCKER_REDIS_CONTAINER} 
+
+all-restart: ## コンテナすべて再起動	
+	docker restart ${DOCKER_BACKEND_CONTAINER} 
+	docker restart ${DOCKER_FRONTEND_CONTAINER} 
+	docker restart ${DOCKER_MYSQL_CONTAINER} 
+	docker restart ${DOCKER_REDIS_CONTAINER} 
+
 be-login: ## backendコンテナにログイン
 	docker exec -it ${DOCKER_BACKEND_CONTAINER} /bin/bash 
 
@@ -69,7 +85,5 @@ redis-down: ## redisコンテナ削除
 	docker stop ${DOCKER_REDIS_CONTAINER} 
 	docker rm   ${DOCKER_REDIS_CONTAINER} 
 
-init-all: ## backendコンテナ・frontendコンテナの初期化を実行
-	@$(MAKE) init-be
-	@$(MAKE) init-fe
+
 
