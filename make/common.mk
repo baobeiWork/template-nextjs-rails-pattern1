@@ -29,6 +29,46 @@ mysql-login: ## MySQLコンテナにログイン
 redis-login: ## Redisコンテナにログイン
 	docker exec -it ${DOCKER_REDIS_CONTAINER} /bin/bash 
 
+be-stop: ## backendコンテナ停止
+	docker stop ${DOCKER_BACKEND_CONTAINER} 
+
+fe-stop: ## frontendコンテナ停止
+	docker stop ${DOCKER_FRONTEND_CONTAINER} 
+
+mysql-stop: ## mysqlコンテナ停止
+	docker stop ${DOCKER_MYSQL_CONTAINER} 
+
+redis-stop: ## redisコンテナ停止
+	docker stop ${DOCKER_REDIS_CONTAINER} 
+
+be-restart: ## backendコンテナ再起動
+	docker restart ${DOCKER_BACKEND_CONTAINER} 
+
+fe-restart: ## frontendコンテナ再起動
+	docker restart ${DOCKER_FRONTEND_CONTAINER} 
+
+mysql-restart: ## mysqlコンテナ再起動
+	docker restart ${DOCKER_MYSQL_CONTAINER} 
+
+redis-restart: ## redisコンテナ再起動
+	docker restart ${DOCKER_REDIS_CONTAINER} 
+
+be-down: ## backendコンテナ削除
+	docker stop ${DOCKER_BACKEND_CONTAINER} 
+	docker rm   ${DOCKER_BACKEND_CONTAINER} 
+
+fe-down: ## frontendコンテナ削除
+	docker stop ${DOCKER_FRONTEND_CONTAINER} 
+	docker rm   ${DOCKER_FRONTEND_CONTAINER} 
+
+mysql-down: ## mysqlコンテナ削除
+	docker stop ${DOCKER_MYSQL_CONTAINER} 
+	docker rm   ${DOCKER_MYSQL_CONTAINER} 
+
+redis-down: ## redisコンテナ削除
+	docker stop ${DOCKER_REDIS_CONTAINER} 
+	docker rm   ${DOCKER_REDIS_CONTAINER} 
+
 init-all: ## backendコンテナ・frontendコンテナの初期化を実行
 	@$(MAKE) init-be
 	@$(MAKE) init-fe
