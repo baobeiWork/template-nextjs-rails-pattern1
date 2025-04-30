@@ -21,13 +21,19 @@ all-init: ## backendコンテナ・frontendコンテナの初期化を実行
 	@$(MAKE) init-be
 	@$(MAKE) init-fe
 
-all-stop: ## コンテナすべて停止	
+readme-template:
+	cp document/.template/TEMPLATE_README.md README.md
+
+readme-project:
+	cp document/.template/PROJECT_README.md README.md
+
+stop: ## コンテナすべて停止	
 	docker stop ${DOCKER_BACKEND_CONTAINER} 
 	docker stop ${DOCKER_FRONTEND_CONTAINER} 
 	docker stop ${DOCKER_MYSQL_CONTAINER} 
 	docker stop ${DOCKER_REDIS_CONTAINER} 
 
-all-restart: ## コンテナすべて再起動	
+restart: ## コンテナすべて再起動	
 	docker restart ${DOCKER_BACKEND_CONTAINER} 
 	docker restart ${DOCKER_FRONTEND_CONTAINER} 
 	docker restart ${DOCKER_MYSQL_CONTAINER} 
