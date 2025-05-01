@@ -9,13 +9,13 @@ fe-init: ## frontend 初期構築 [ yarn install + ディレクトリセット�
 	@echo "frontend 初期化を実行します"
 	docker exec $(DOCKER_FRONTEND_CONTAINER) yarn install
 	docker exec $(DOCKER_FRONTEND_CONTAINER) yarn create next-app initial-temp \
-	--typescript \
-	--eslint \
-	--no-tailwind \
-	--src-dir \
-	--app \
-	--import-alias "@/*" \
-	--turbopack
+		--typescript \
+		--eslint \
+		--no-tailwind \
+		--src-dir \
+		--app \
+		--import-alias "@/*" \
+		--turbopack
 
 	docker exec $(DOCKER_FRONTEND_CONTAINER) rm -rf \
 		/frontend/initial-temp/.gitignore \
@@ -27,6 +27,13 @@ fe-init: ## frontend 初期構築 [ yarn install + ディレクトリセット�
 
 	docker exec $(DOCKER_FRONTEND_CONTAINER) /bin/bash -c 'mv /frontend/initial-temp/* /frontend/'
 	docker exec $(DOCKER_FRONTEND_CONTAINER) rmdir /frontend/initial-temp
+	docker exec $(DOCKER_FRONTEND_CONTAINER) /bin/bash -c '\
+		mkdir -p /frontend/src/components/{ui,common,layout} && \
+		mkdir -p /frontend/src/hooks && \
+		mkdir -p /frontend/src/lib && \
+		mkdir -p /frontend/src/styles && \
+		mkdir -p /frontend/src/types \
+	'
 	docker exec $(DOCKER_FRONTEND_CONTAINER) yarn install
 
 	@echo "frontend 初期化完了しました"
