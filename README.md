@@ -1,74 +1,82 @@
-# ＜システム名称>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>template-nextjs-rails-pattern1</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-image: url('./document/.template/readme/assets/img/background_main.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #fff;
+    }
 
-## ディレクトリ構成
----
+    .overlay-box {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 2rem auto;
+      max-width: 800px;
+      backdrop-filter: blur(4px);
+    }
 
-| ディレクトリ・ファイル名          | 内容                             |
-| ----                              | ----                             |
-| backend                           | バックエンドエンド用ディレクトリ |
-| frontend                          | フロントエンド用ディレクトリ     |
-| infrastructure                    | インフラ関連ディレクトリ         |
-| make                              | makeファイル管理用ディレクトリ   |
-| document                          | ドキュメント関連ディレクトリ     |
-| .env.sample                       | 環境変数定義ファイルサンプル     |
-| .gitignore                        | git追跡除外リスト                | 
-| docker-compose-infrastructure.yml | インフラデプロイ用コンテナ定義   | 
-| docker-compose.yml                | コンテナ定義                     | 
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #f5f5f5;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 1rem;
+    }
 
-<br>
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-top: 2rem;
+      text-shadow: 1px 1px 2px #000;
+    }
 
-## 仕様書
----
+    ul {
+      margin-left: 1rem;
+      list-style-type: disc;
+    }
+  </style>
+</head>
+<body>
+  <h1>template-nextjs-rails-pattern1</h1>
 
-### 設計書（Design）
-* [詳細設計書（Detail Design）](./document/system_design/detail_design/main.md)
+  <div class="overlay-box">
+    <div class="section-title">About Project</div>
+    <p>
+      このリポジトリテンプレートはRuby On Rails - Next.jsアーキテクチャパターンを簡単にセットアップできる目的でつくられています。<br>
+      アーキテクチャ構造だけでなく、
+    </p>
+    <ul>
+      <li>設計ドキュメント</li>
+      <li>本番運用を想定したAWS環境構築</li>
+      <li>テスト</li>
+    </ul>
+    <p>などをサポートできるよう構成されています。</p>
+  </div>
 
-### 画面
-* [画面仕様書](#) <!-- TODO: FigmaやPDFなどのリンクに置き換え -->
+  <div class="overlay-box">
+    <div class="section-title">Stack</div>
+    <p>
+      Ruby On Rails / Next.js / AWS / Terraform / Docker / GitHub Actions などが採用されています。
+    </p>
+  </div>
 
-### API
-* [API仕様書](http://localhost:8000/api-docs)
-
-### テスト
-### 単体テスト
-
-* [バックエンド](./document/test/unit/backend/rspec.xml)
-* [フロントエンド](./document/test/unit/frontend/jest.xml)
-* [インフラ](./document/test/unit/infrastructure/infra.xml)
-
-### 結合テスト
-* [テストシナリオ](#) <!-- TODO: 実体ができたらリンク化 -->
-
-<br>
-<br>
-
-## デプロイ
----
-
-### インフラ構築
-
-* ローカル開発環境の構築
-  * [構築手順](./document/deploy/local/main.md)
-  
-* AWS環境の構築
-  * [初期構築手順](./document/deploy/aws_initial/main.md)
-  * [デプロイ手順](./document/deploy/aws_subsequent/main.md)
-
-<br>
-<br>
-
-## 運用
----
-
-* [運用](./document/operation/operation/main.md)
-* [保守](./document/operation/maintenance/main.md)
-* [監視](./document/operation/monitoring/main.md)
-
-
-<br>
-<br>
-
-## 開発規則
----
-
-* [開発規則](./document/rules/main.md)
+  <div class="overlay-box">
+    <div class="section-title">Manual</div>
+    <p>
+      詳細な構築・デプロイ手順、利用方法などは <code>document/</code> ディレクトリ配下をご確認ください。
+    </p>
+  </div>
+</body>
+</html>

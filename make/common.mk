@@ -22,10 +22,10 @@ all-init: ## backendコンテナ・frontendコンテナの初期化を実行
 	@$(MAKE) init-fe
 
 readme-template:
-	cp document/.template/TEMPLATE_README.md README.md
+	cp document/.template/readme/TEMPLATE_README.md README.md
 
 readme-project:
-	cp document/.template/PROJECT_README.md README.md
+	cp document/.template/readme/PROJECT_README.md README.md
 
 stop: ## コンテナすべて停止	
 	docker stop ${DOCKER_BACKEND_CONTAINER} 
