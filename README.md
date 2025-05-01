@@ -1,74 +1,56 @@
-# ＜システム名称>
 
-## ディレクトリ構成
----
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/1a95d868-5c7a-4bf9-9d81-b3b0749814e9" alt="" >
+</div>
 
-| ディレクトリ・ファイル名          | 内容                             |
-| ----                              | ----                             |
-| backend                           | バックエンドエンド用ディレクトリ |
-| frontend                          | フロントエンド用ディレクトリ     |
-| infrastructure                    | インフラ関連ディレクトリ         |
-| make                              | makeファイル管理用ディレクトリ   |
-| document                          | ドキュメント関連ディレクトリ     |
-| .env.sample                       | 環境変数定義ファイルサンプル     |
-| .gitignore                        | git追跡除外リスト                | 
-| docker-compose-infrastructure.yml | インフラデプロイ用コンテナ定義   | 
-| docker-compose.yml                | コンテナ定義                     | 
+このリポジトリテンプレートはRuby On Rails - Next.jsアーキテクチャパターンを簡単にセットアップできる目的でつくられています。
 
-<br>
-
-## 仕様書
----
-
-### 設計書（Design）
-* [詳細設計書（Detail Design）](./document/system_design/detail_design/main.md)
-
-### 画面
-* [画面仕様書](#) <!-- TODO: FigmaやPDFなどのリンクに置き換え -->
-
-### API
-* [API仕様書](http://localhost:8000/api-docs)
-
-### テスト
-### 単体テスト
-
-* [バックエンド](./document/test/unit/backend/rspec.xml)
-* [フロントエンド](./document/test/unit/frontend/jest.xml)
-* [インフラ](./document/test/unit/infrastructure/infra.xml)
-
-### 結合テスト
-* [テストシナリオ](#) <!-- TODO: 実体ができたらリンク化 -->
+アーキテクチャ構造だけでなく、
+    
+- 設計ドキュメント
+- 本番運用を想定したAWS環境構築
+- テスト
+    
+などをサポートできるよう構成されています。
 
 <br>
 <br>
 
-## デプロイ
----
+<div align="centere">
+    <img src="https://github.com/user-attachments/assets/cba6078b-7468-4e4f-b6d7-80f0b3d63080" alt="">
+</div>
 
-### インフラ構築
+Base
+    
+![Rails](https://img.shields.io/badge/Rails-red?logo=rubyonrails)
+![Next.js](https://img.shields.io/badge/Next.js-black?logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-005C84?logo=mysql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?logo=redis&logoColor=white)
 
-* ローカル開発環境の構築
-  * [構築手順](./document/deploy/local/main.md)
-  
-* AWS環境の構築
-  * [初期構築手順](./document/deploy/aws_initial/main.md)
-  * [デプロイ手順](./document/deploy/aws_subsequent/main.md)
+Infrastructure
 
-<br>
-<br>
+![AWS](https://img.shields.io/badge/AWS-232F3E?logo=amazonaws&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-623CE4?logo=terraform&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?logo=githubactions&logoColor=white)
 
-## 運用
----
+Test
 
-* [運用](./document/operation/operation/main.md)
-* [保守](./document/operation/maintenance/main.md)
-* [監視](./document/operation/monitoring/main.md)
+![RSpec](https://img.shields.io/badge/RSpec-red?logo=ruby)
+![Jest](https://img.shields.io/badge/Jest-C21325?logo=jest)
+![ESLint](https://img.shields.io/badge/ESLint-4B32C3?logo=eslint)
+![Prettier](https://img.shields.io/badge/Prettier-F7B93E?logo=prettier&logoColor=black)
 
 
 <br>
 <br>
 
-## 開発規則
----
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/df2ba8ed-b8b1-4633-915d-c238467a28d6" alt="">
+</div>
 
-* [開発規則](./document/rules/main.md)
+* [初期構築ドキュメント](./document/deploy/local_initial/main.md)
+ 
+
+
