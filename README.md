@@ -1,6 +1,6 @@
 
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/cba6078b-7468-4e4f-b6d7-80f0b3d63080" alt="" >
+    <img src="https://github.com/user-attachments/assets/1a95d868-5c7a-4bf9-9d81-b3b0749814e9" alt="" >
 </div>
 
 このリポジトリテンプレートはRuby On Rails - Next.jsアーキテクチャパターンを簡単にセットアップできる目的でつくられています。
@@ -17,5 +17,5 @@
 </div>
 
 <div align="centere">
-    <img src="https://github.com/user-attachments/assets/5697c61b-7b37-40a9-92e3-a153469e9ab6" alt="">
+    <img src="https://github.com/user-attachments/assets/cba6078b-7468-4e4f-b6d7-80f0b3d63080" alt="">
 </div>
