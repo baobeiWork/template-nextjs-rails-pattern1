@@ -20,7 +20,28 @@
     <img src="https://github.com/user-attachments/assets/cba6078b-7468-4e4f-b6d7-80f0b3d63080" alt="">
 </div>
 
-* コンテンツ準備中
+Base
+    
+![Rails](https://img.shields.io/badge/Rails-red?logo=rubyonrails)
+![Next.js](https://img.shields.io/badge/Next.js-black?logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-005C84?logo=mysql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?logo=redis&logoColor=white)
+
+Infrastructure
+
+![AWS](https://img.shields.io/badge/AWS-232F3E?logo=amazonaws&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-623CE4?logo=terraform&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?logo=githubactions&logoColor=white)
+
+Test
+
+![RSpec](https://img.shields.io/badge/RSpec-red?logo=ruby)
+![Jest](https://img.shields.io/badge/Jest-C21325?logo=jest)
+![ESLint](https://img.shields.io/badge/ESLint-4B32C3?logo=eslint)
+![Prettier](https://img.shields.io/badge/Prettier-F7B93E?logo=prettier&logoColor=black)
+
 
 <br>
 <br>
@@ -30,5 +51,6 @@
 </div>
 
 * [初期構築ドキュメント](./document/deploy/local_initial/main.md)
+ 
 
 
