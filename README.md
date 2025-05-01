@@ -1,4 +1,4 @@
-<img width="772" alt="Image" src="https://github.com/user-attachments/assets/2d77b96a-3eab-4eef-acde-4aad1db81371" />
+![Image](https://github.com/user-attachments/assets/e83ad48e-97e5-47c5-8706-607b98750841)
 
 ## Manual
 
