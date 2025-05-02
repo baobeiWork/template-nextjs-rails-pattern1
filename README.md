@@ -74,4 +74,4 @@ Test
 
 （The following items are currently being prepared.）
 
-* [makeコマンド一覧（Make Commands List）]()
+* [makeコマンド一覧（Make Commands List）]() <- コンテンツ準備中
