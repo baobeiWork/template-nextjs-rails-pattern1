@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/5f18c7ee-62d2-4e7a-84cd-3a5a8c49f783" alt="" width="100%">
+    <img src="https://github.com/user-attachments/assets/572ac68b-05cb-49db-8eed-2d4ae81a43f5" alt="" width="100%">
 </div>
 
 ## 目次
