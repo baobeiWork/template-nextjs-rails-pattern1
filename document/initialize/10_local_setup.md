@@ -146,6 +146,8 @@ WindowsはWSL(Ubuntu) + Docker Desktopを利用します。
 	{"message":"Local deployment api verification successful!"}
 	``` 
 
-[次のステップへ](../)
+[PREVIOUS](./03_system_architecture.md)
 
-[READMEトップに戻る](../../README.md)
+[NEXT](./11_frontend_setup.md) 
+
+[RETURN README](../../README.md)
