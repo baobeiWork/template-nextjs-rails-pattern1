@@ -54,13 +54,10 @@ Test
 
 * 初期セットアップ
   * ローカル開発環境のセットアップ
-    * [コンテナの立ち上げ](./document/deploy/local_initial/main.md)
+    * [コンテナの立ち上げ](./document/initialize/local/main.md)
     * [バックエンド - フロントエンドの紐づけ](./document/)
     * [フロントエンドテストの設定](./)
     * [バックエンドテストの設定](./)
   * ドキュメントのセットアップ
     * [READMEの更新](./)
-
-
- 
 
