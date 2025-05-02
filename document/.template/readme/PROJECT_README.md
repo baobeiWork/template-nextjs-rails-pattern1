@@ -1,18 +1,56 @@
-<head>
-  <meta charset="utf-8">
-  <title>template-nextjs-rails-pattern1</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="stylesheet" href="./assets/main.css">
-</head>
-<body>
 
-</body>
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/1a95d868-5c7a-4bf9-9d81-b3b0749814e9" alt="" >
+</div>
 
-<style>
-  body {
-    background-image: url('./img/background_main.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  } 
-</style>
+このリポジトリテンプレートはRuby On Rails - Next.jsアーキテクチャパターンを簡単にセットアップできる目的でつくられています。
+
+アーキテクチャ構造だけでなく、
+    
+- 設計ドキュメント
+- 本番運用を想定したAWS環境構築
+- テスト
+    
+などをサポートできるよう構成されています。
+
+<br>
+<br>
+
+<div align="centere">
+    <img src="https://github.com/user-attachments/assets/cba6078b-7468-4e4f-b6d7-80f0b3d63080" alt="">
+</div>
+
+Base
+    
+![Rails](https://img.shields.io/badge/Rails-red?logo=rubyonrails)
+![Next.js](https://img.shields.io/badge/Next.js-black?logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-005C84?logo=mysql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?logo=redis&logoColor=white)
+
+Infrastructure
+
+![AWS](https://img.shields.io/badge/AWS-232F3E?logo=amazonaws&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-623CE4?logo=terraform&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?logo=githubactions&logoColor=white)
+
+Test
+
+![RSpec](https://img.shields.io/badge/RSpec-red?logo=ruby)
+![Jest](https://img.shields.io/badge/Jest-C21325?logo=jest)
+![ESLint](https://img.shields.io/badge/ESLint-4B32C3?logo=eslint)
+![Prettier](https://img.shields.io/badge/Prettier-F7B93E?logo=prettier&logoColor=black)
+
+
+<br>
+<br>
+
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/df2ba8ed-b8b1-4633-915d-c238467a28d6" alt="">
+</div>
+
+* [初期構築ドキュメント](./document/deploy/local_initial/main.md)
+ 
+
+

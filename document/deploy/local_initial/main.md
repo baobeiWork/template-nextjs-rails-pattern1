@@ -1,35 +1,65 @@
-# ローカル開発環境：初期構築
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/5f18c7ee-62d2-4e7a-84cd-3a5a8c49f783" alt="" >
+</div>
 
-## 事前準備
+## 1. 事前準備
 ---
 
-### 必要ソフトウェアの導入
+### 1.1. 環境変数の定義
+プロジェクトルートに.envファイルを配置してください。
 
-1.  下記のソフトウェア・ツールをインストールしてください
+.envファイルのサンプルは下記の共有フォルダに格納しています。（基本的にはサンプルを配置して起動いただければ問題ありません。）
 
-   | Name           | Link | Remarks |
-   | :---           | :--- | :---    | 
-   | Docker Desktop | https://www.docker.com/ja-jp/products/docker-desktop/ | 
+* [AssetCompass/infrastructure/01_ローカル開発環境](https://drive.google.com/drive/folders/16F5p7X0yepL_9PuN82hPS9EU14tqNZIG?usp=drive_link)
 
-### .envファイルの準備
+* 環境変数
 
-* プロジェクトルートにある.env.sampleを参考に、.envファイルを作成してください。各環変数の内容は下記の通りです。
-
-	| 環境変数名 						  	| 適用されるコンテナ 	| 説明 | 
-	| :---       						  	| :--- 				 	 			| :--- | 
-	| SYSTEM_NAME						  	| all 								| システム名
-	| SYSTEM_DOMAIN 				  	| all 								| システムドメイン名
-	| NEXT_ENV							  	| frontend 						| 起動したい環境名
-	| NEXT_PUBLIC_API_URL 			| frontend 						| backendのエンドポイント
-	| NEXT_PUBLIC_IS_API_MOCKED | frontend 						| Mock Serverを利用するか（true / false）
-	| MYSQL_ROOT_USER					  | db									| ローカルで起動する mysql root名
+	| 環境変数名 								 | 適用されるコンテナ 	| 説明
+	| :---       								| :--- 				 	 			| :---
+	| LOCAL_ARCH 								| all									| ローカル開発環境を立ち上げるコンピュータのアーキテクチャ（amd64 / arm64 ）
+	| SYSTEM_NAME								| all 								| システム名
+	| SYSTEM_DOMAIN 						| all 								| システムドメイン名
+	| NUXT_ENV									| frontend 						| 起動したい環境名
+	| NUXT_PUBLIC_API_URL 			| frontend 						| backendのエンドポイント
+	| NUXT_PUBLIC_IS_API_MOCKED | frontend 						| Mock Serverを利用するか（true / false）
+	| MYSQL_ROOT_USER						| db									| ローカルで起動する mysql root名
 	| MYSQL_ROOT_PASSWORD 			| db									| ローカルで起動する mysql rootパスワード
 	| MYSQL_USERNAME					  | db									| ローカルで起動する mysql ユーザー名
 	| MYSQL_PASSWORD					  | db									| ローカルで起動する mysql パスワード
 	| MYSQL_DATABASE					  | db									| ローカルで起動する mysql データベース名
 
 <br>
-<br>
+
+### 1.2. 必要ソフトウェアのインストール・機能の有効化
+Infrastructure構築用のコンテナの立ち上げに必要な下記のソフトウェアを用意してください。
+
+#### 1.2.1. Windows
+WindowsはWSL(Ubuntu) + Docker Desktopを利用します。
+
+
+* [Docker Desktop](https://www.bing.com/search?qs=HS&pq=Docker&sk=CSYN1&sc=13-6&pglt=2083&q=docker+desktop&cvid=02fa67f8ea97404aa3325ef6f3b5e920&gs_lcrp=EgRlZGdlKgcIABAAGPkHMgcIABAAGPkHMgYIARBFGDkyBggCEAAYQDIGCAMQRRg7MgYIBBAAGEAyBggFEAAYQDIGCAYQABhAMgYIBxBFGDwyBggIEEUYPNIBCDEyMzRqMGoxqAIIsAIB&FORM=ANNTA1&PC=U531)のインストール
+
+* [WSL](https://learn.microsoft.com/ja-jp/windows/wsl/install)の有効化
+  * Windows11からはWSLをインストールする前提条件として下記のWindowsの機能を有効化する必要があります。
+    * Linux 用 Windows サブシステム
+    * Hype-V
+
+* [Ubuntu(WSL distribution)]()のインストール
+
+#### 1.2.2. MAC
+
+* [Docker Desktop](https://www.bing.com/search?qs=HS&pq=Docker&sk=CSYN1&sc=13-6&pglt=2083&q=docker+desktop&cvid=02fa67f8ea97404aa3325ef6f3b5e920&gs_lcrp=EgRlZGdlKgcIABAAGPkHMgcIABAAGPkHMgYIARBFGDkyBggCEAAYQDIGCAMQRRg7MgYIBBAAGEAyBggFEAAYQDIGCAYQABhAMgYIBxBFGDwyBggIEEUYPNIBCDEyMzRqMGoxqAIIsAIB&FORM=ANNTA1&PC=U531)のインストール
+
+
+#### 1.3. master.keyの配置
+
+   BackEnd/config/にmaster.keyを配置してください。
+
+	 master.keyは下記の共有フォルダに格納しています。
+
+	 * [AssetCompass/infrastructure/01_ローカル開発環境](https://drive.google.com/drive/folders/16F5p7X0yepL_9PuN82hPS9EU14tqNZIG?usp=drive_link)
+
+  
 
 ## 構築
 ---

@@ -50,7 +50,17 @@ Test
     <img src="https://github.com/user-attachments/assets/df2ba8ed-b8b1-4633-915d-c238467a28d6" alt="">
 </div>
 
-* [初期構築ドキュメント](./document/deploy/local_initial/main.md)
- 
+* [はじめに](./document/)
 
+* 初期セットアップ
+  * ローカル開発環境のセットアップ
+    * [コンテナの立ち上げ](./document/deploy/local_initial/main.md)
+    * [バックエンド - フロントエンドの紐づけ](./document/)
+    * [フロントエンドテストの設定](./)
+    * [バックエンドテストの設定](./)
+  * ドキュメントのセットアップ
+    * [READMEの更新](./)
+
+
+ 
 
