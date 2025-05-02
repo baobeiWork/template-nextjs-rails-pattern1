@@ -4,9 +4,12 @@
 </div>
 
 このリポジトリテンプレートはRuby On Rails - Next.jsアーキテクチャパターンを簡単にセットアップできる目的でつくられています。
+
 （This repository template is designed to make it easy to set up the Ruby On Rails - Next.js architecture pattern.）
 
+
 アーキテクチャ構造だけでなく、次のような項目がサポートされるよう構成されています
+
 （In addition to the architectural structure, the following items are configured to be supported）
     
 - 設計ドキュメント（Design Documentation）
@@ -53,6 +56,7 @@ Test
 ## 初期構築（Initial Construction）
 
 本リポジトリテンプレートを利用するにあたり、次のドキュメントの記載に従い、セットアップ・プロジェクト利用を勧めてください。
+
 （When using this repository template, we recommend that you use the setup project as described in the following document）
 
 * [はじめに（Overview）](./document/initialize/01_overview.md)
@@ -67,6 +71,7 @@ Test
 ## Tips
 
 下記の項目はコンテンツ準備中となります。
+
 （The following items are currently being prepared.）
 
 * [makeコマンド一覧（Make Commands List）]()
