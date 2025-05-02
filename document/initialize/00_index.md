@@ -11,4 +11,4 @@
 * [テストガイド（TestGuaid）](./document/initialize/20_test_guaid.md)
 * [READMEのスイッチ（Switch Readme）](./document/initialize/30_switch_readme.md)
 
-[READMEトップに戻る](../../../README.md)
+[READMEトップに戻る](../../README.md)
