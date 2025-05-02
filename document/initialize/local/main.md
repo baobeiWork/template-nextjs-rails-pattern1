@@ -16,10 +16,7 @@
 ### 1.1. 環境変数の定義
 プロジェクトルートに.envファイルを配置してください。
 
-.envファイルのサンプルは下記の共有フォルダに格納しています。（基本的にはサンプルを配置して起動いただければ問題ありません。）
-
-* [AssetCompass/infrastructure/01_ローカル開発環境](https://drive.google.com/drive/folders/16F5p7X0yepL_9PuN82hPS9EU14tqNZIG?usp=drive_link)
-
+.envファイルのサンプルは.env.sampleとして配置しています。Renameするか、コピーして.evvを作成してください。
 * 環境変数
 
 	| 環境変数名 								| 適用されるコンテナ 	| 説明
