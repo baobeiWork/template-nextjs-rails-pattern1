@@ -1,23 +1,26 @@
 
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/1a95d868-5c7a-4bf9-9d81-b3b0749814e9" alt="" >
+    <img src="https://github.com/user-attachments/assets/1a95d868-5c7a-4bf9-9d81-b3b0749814e9" alt="" width="100%">
 </div>
 
 このリポジトリテンプレートはRuby On Rails - Next.jsアーキテクチャパターンを簡単にセットアップできる目的でつくられています。
 
-アーキテクチャ構造だけでなく、
+（This repository template is designed to make it easy to set up the Ruby On Rails - Next.js architecture pattern.）
+
+
+アーキテクチャ構造だけでなく、次のような項目がサポートされるよう構成されています
+
+（In addition to the architectural structure, the following items are configured to be supported）
     
-- 設計ドキュメント
-- 本番運用を想定したAWS環境構築
-- テスト
-    
-などをサポートできるよう構成されています。
+- 設計ドキュメント（Design Documentation）
+- 本番運用を想定したAWS環境構築（AWS Environment set up for production use）
+- テスト（Testing）
 
 <br>
 <br>
 
 <div align="centere">
-    <img src="https://github.com/user-attachments/assets/cba6078b-7468-4e4f-b6d7-80f0b3d63080" alt="">
+    <img src="https://github.com/user-attachments/assets/cba6078b-7468-4e4f-b6d7-80f0b3d63080" alt="" width="100%">
 </div>
 
 Base
@@ -47,10 +50,28 @@ Test
 <br>
 
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/df2ba8ed-b8b1-4633-915d-c238467a28d6" alt="">
+    <img src="https://github.com/user-attachments/assets/df2ba8ed-b8b1-4633-915d-c238467a28d6" alt="" width="100%">
 </div>
 
-* [初期構築ドキュメント](./document/deploy/local_initial/main.md)
- 
+## 初期構築（Initial Construction）
 
+本リポジトリテンプレートを利用するにあたり、次のドキュメントの記載に従い、セットアップ・プロジェクト利用を勧めてください。
 
+（When using this repository template, we recommend that you use the setup project as described in the following document）
+
+* [はじめに（Overview）](./document/initialize/01_overview.md) <- コンテンツ準備中
+* [前提知識（Prerequisite）](./document/initialize/02_prerequisite.md) <- コンテンツ準備中
+* [システム構成（System Srchitecture）](./document/initialize/03_system_architecture.md) 
+* [ローカル開発環境の立ち上げ（Setup Local）](./document/initialize/local/main.md)
+* [フロントエンドの設定（Setting Frontend）](./document/initialize/11_frontend_setup.md) <- コンテンツ準備中
+* [バックエンドの設定（Setting Backend）](./document/initialize/12_backend_setup.md) <- コンテンツ準備中
+* [テストガイド（TestGuaid）](./document/initialize/20_test_guaid.md) <- コンテンツ準備中
+* [READMEのスイッチ（Switch Readme）](./document/initialize/30_switch_readme.md) <- コンテンツ準備中
+
+## Tips
+
+下記の項目はコンテンツ準備中となります。
+
+（The following items are currently being prepared.）
+
+* [makeコマンド一覧（Make Commands List）]() <- コンテンツ準備中
