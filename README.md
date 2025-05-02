@@ -4,14 +4,14 @@
 </div>
 
 このリポジトリテンプレートはRuby On Rails - Next.jsアーキテクチャパターンを簡単にセットアップできる目的でつくられています。
+（This repository template is designed to make it easy to set up the Ruby On Rails - Next.js architecture pattern.）
 
-アーキテクチャ構造だけでなく、
+アーキテクチャ構造だけでなく、次のような項目がサポートされるよう構成されています
+（In addition to the architectural structure, the following items are configured to be supported）
     
-- 設計ドキュメント
-- 本番運用を想定したAWS環境構築
-- テスト
-    
-などをサポートできるよう構成されています。
+- 設計ドキュメント（Design Documentation）
+- 本番運用を想定したAWS環境構築（AWS Environment set up for production use）
+- テスト（Testing）
 
 <br>
 <br>
@@ -50,14 +50,23 @@ Test
     <img src="https://github.com/user-attachments/assets/df2ba8ed-b8b1-4633-915d-c238467a28d6" alt="" width="100%">
 </div>
 
-* [はじめに](./document/)
+## 初期構築（Initial Construction）
 
-* 初期セットアップ
-  * ローカル開発環境のセットアップ
-    * [コンテナの立ち上げ](./document/initialize/local/main.md)
-    * [バックエンド - フロントエンドの紐づけ](./document/)
-    * [フロントエンドテストの設定](./)
-    * [バックエンドテストの設定](./)
-  * ドキュメントのセットアップ
-    * [READMEの更新](./)
+本リポジトリテンプレートを利用するにあたり、次のドキュメントの記載に従い、セットアップ・プロジェクト利用を勧めてください。
+（When using this repository template, we recommend that you use the setup project as described in the following document）
 
+* [はじめに（Overview）](./document/initialize/01_overview.md)
+* [前提知識（Prerequisite）](./document/initialize/02_prerequisite.md)
+* [システム構成（System Srchitecture）](./document/initialize/03_system_architecture.md)
+* [ローカル開発環境の立ち上げ（Setup Local）](./document/initialize/local/main.md)
+* [フロントエンドの設定（Setting Frontend）](./document/initialize/11_frontend_setup.md)
+* [バックエンドの設定（Setting Backend）](./document/initialize/12_backend_setup.md)
+* [テストガイド（TestGuaid）](./document/initialize/20_test_guaid.md)
+* [READMEのスイッチ（Switch Readme）](./document/initialize/30_switch_readme.md)
+
+## Tips
+
+下記の項目はコンテンツ準備中となります。
+（The following items are currently being prepared.）
+
+* [makeコマンド一覧（Make Commands List）]()
