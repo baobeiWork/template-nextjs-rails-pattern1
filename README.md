@@ -59,8 +59,8 @@ Test
 
 （When using this repository template, we recommend that you use the setup project as described in the following document）
 
-* [はじめに（Overview）](./document/initialize/01_overview.md) <- コンテンツ準備中
-* [前提知識（Prerequisite）](./document/initialize/02_prerequisite.md) <- コンテンツ準備中
+* [はじめに（Overview）](./document/initialize/01_overview.md)
+* [前提知識（Prerequisite）](./document/initialize/02_prerequisite.md)
 * [システム構成（System Srchitecture）](./document/initialize/03_system_architecture.md) 
 * [ローカル開発環境の立ち上げ（Setup Local）](./document/initialize/local/main.md)
 * [フロントエンドの設定（Setting Frontend）](./document/initialize/11_frontend_setup.md) <- コンテンツ準備中
