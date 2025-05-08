@@ -29,7 +29,38 @@
 	```
 	<br>
 
-2. entrypoint.shの切り替え
+2. database.ymlの更新
+	前項でbe-initにより生成されたファイルにおいて、db接続情報を記載してあげる必要があります。
+
+	「backend/config/database.yml」の「default」項目を次のように修正してください。
+
+	* before
+
+	```yml
+	default: &default
+		adapter: mysql2
+		encoding: utf8mb4
+		pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+		username: root
+		password:
+		host: <%= ENV.fetch("DB_HOST") { "127.0.0.1" } %>
+	```
+
+	* after
+
+	```yml
+	default: &default
+		adapter: mysql2
+		encoding: utf8mb4
+		pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+		username: root
+		password: <%= ENV["DATABASE_PASSWORD"] %>               # データベースパスワードを追記
+		host: <%= ENV.fetch("DATABASE_HOST") { "127.0.0.1" } %> # DB_HOST -> DATABASE_PASSWORDへ
+	```
+
+	<br>
+
+3. entrypoint.shの切り替え
 
 	下記のコマンドを実行します。初期のentrypoint.shはgem install前に起動保持するようになっているため、Webサーバが起動していない状態です。
 
@@ -41,7 +72,7 @@
 
 	<br>
 
-3. 再起動
+4. 再起動
 
 	下記のコマンドを実行してフロントエンドコンテナを再起動します。
 
