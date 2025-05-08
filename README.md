@@ -64,7 +64,7 @@ Test
 * [システム構成（System Srchitecture）](./document/initialize/03_system_architecture.md) 
 * [ローカル開発環境の立ち上げ（Setup Local）](./document/initialize/10_local_setup.md)
 * [フロントエンドの設定（Setting Frontend）](./document/initialize/11_frontend_setup.md)
-* [バックエンドの設定（Setting Backend）](./document/initialize/12_backend_setup.md) <- コンテンツ準備中
+* [バックエンドの設定（Setting Backend）](./document/initialize/12_backend_setup.md)
 * [テストガイド（TestGuaid）](./document/initialize/20_test_guaid.md) <- コンテンツ準備中
 * [READMEのスイッチ（Switch Readme）](./document/initialize/30_switch_readme.md) <- コンテンツ準備中
 
