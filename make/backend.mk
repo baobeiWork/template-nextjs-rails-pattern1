@@ -34,19 +34,20 @@ be-init: ## backend 初期構築 [ Rails new apiモード ] ()
 	
 	@echo "初期化完了しました"
 
-be-switch-entrypoint: ## backend entrypoint.shを切り替え ()
+be-updates-entrypoint: ## backend entrypoint.shを切り替え (基本的には初期構築時のみ利用)
 ifndef type
 	$(error 切り替えるentrypoint typeが指定されていません: make be-switch-entrypoint type=initial または type=deploy)
 endif
 	@if [ "$(type)" = "initial" ]; then \
-		src=infrastructure/docker/backend/shell/initial/entrypoint.sh; \
+		src=infrastructure/shell/backend/initial/entrypoint.sh; \
 	elif [ "$(type)" = "deploy" ]; then \
-		src=infrastructure/docker/backend/shell/deploy/entrypoint.sh; \
+		src=infrastructure/shell/backend/deploy/entrypoint.sh; \
 	else \
 		echo "モードは initial または deploy のみ対応しています: type=$(type)"; \
 		exit 1; \
 	fi; \
 	echo "entrypoint.sh を $(type) に切り替えます"; \
-	docker cp $$src $$(docker-compose ps -q backend):/entrypoint.sh; \
-	docker-compose exec backend chmod +x /entrypoint.sh; \
-	echo "$(type) entrypoint に切り替えました"
+	cp -a $$src infrastructure/shell/backend/entrypoint.sh \
+	docker cp $$src $$(docker-compose ps -q backend):/usr/bin/entrypoint.sh; \
+	docker-compose exec backend chmod +x /usr/bin/entrypoint.sh; \
+	echo "$(type) entrypoint に切り替えました。backendコンテナを再起動してください。"
