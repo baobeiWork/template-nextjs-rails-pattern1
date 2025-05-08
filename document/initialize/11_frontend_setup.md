@@ -15,7 +15,25 @@
 	```
 	<br>
 
+2. entrypoint.shの切り替え
 
+	下記のコマンドを実行します。初期のentrypoint.shはyarn install 前に起動保持するようになっているため、Webサーバが起動していない状態です。
+
+	切り替えたentrypoint.shを利用することにより、コンテナは再起動するたびにパッケージを更新し、nextが起動するようになります。
+
+	```bash 
+	sudo make fe-update type=deploy
+	```
+	<br>
+
+3. 再起動
+
+	下記のコマンドを実行してフロントエンドコンテナを再起動します。
+
+	```bash 
+	```
+<br>
+<br>
 
 ## 6.テスト
 ---
