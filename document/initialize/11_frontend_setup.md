@@ -35,7 +35,7 @@
 	切り替えたentrypoint.shを利用することにより、コンテナは再起動するたびにPackage.jsonに基づいてパッケージを更新し、nextが起動するようになります。
 
 	```bash 
-	make fe-update type=deploy
+	make fe-update-entrypoint type=deploy
 	```
 	<br>
 

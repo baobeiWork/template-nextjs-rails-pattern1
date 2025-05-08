@@ -36,7 +36,7 @@
 	切り替えたentrypoint.shを利用することにより、コンテナは再起動するたびにGemfileに基づいてGemを更新し、Pumaが起動するようになります。
 
 	```bash 
-	make be-update type=deploy
+	make be-update-entrypoint type=deploy
 	```
 
 	<br>
