@@ -36,5 +36,5 @@ COPY ./frontend /frontend
 COPY ./infrastructure/shell/frontend/entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/*
 
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["/usr/bin/entrypoint.sh"]
 EXPOSE 8000
