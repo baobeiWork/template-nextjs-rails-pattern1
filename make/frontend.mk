@@ -40,7 +40,7 @@ fe-init: ## frontend 初期構築 [ yarn install + ディレクトリセット�
 
 fe-update-entrypoint: ## frontend entrypoint.shを切り替え (基本的には初期構築時のみ利用)
 ifndef type
-	$(error 切り替えるentrypoint typeが指定されていません: make be-switch-entrypoint type=initial または type=deploy)
+	$(error 切り替えるentrypoint typeが指定されていません: make fe-update-entrypoint type=initial または type=deploy)
 endif
 	@if [ "$(type)" = "initial" ]; then \
 		src=infrastructure/shell/frontend/initial/entrypoint.sh; \
