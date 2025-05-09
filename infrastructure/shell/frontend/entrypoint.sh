@@ -11,7 +11,7 @@ elif [ "$NEXT_ENV" = "staging" ]; then
   echo "Environment is stg, starting yarn stg..."
   yarn stg 
 elif [ "$NEXT_ENV" = "production" ]; then
-  echo "Environment is prodcution, starting build and start..."
+  echo "Environment is production, starting build and start..."
   yarn build 
   yarn start
 else
