@@ -98,6 +98,8 @@
 
 2. 正常にIndexページが表示されることを確認してください。
 
+<img src="./img/12/rails.png" alt="" width="auto">
+
 <br>
 <br>
 
