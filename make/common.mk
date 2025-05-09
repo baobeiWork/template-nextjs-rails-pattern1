@@ -39,6 +39,9 @@ restart: ## コンテナすべて再起動
 	docker restart ${DOCKER_MYSQL_CONTAINER} 
 	docker restart ${DOCKER_REDIS_CONTAINER} 
 
+# =================================
+# コンテナログイン コマンド
+# =================================
 be-login: ## backendコンテナにログイン
 	docker exec -it ${DOCKER_BACKEND_CONTAINER} /bin/bash 
 
@@ -51,6 +54,9 @@ mysql-login: ## MySQLコンテナにログイン
 redis-login: ## Redisコンテナにログイン
 	docker exec -it ${DOCKER_REDIS_CONTAINER} /bin/bash 
 
+# =================================
+# コンテナ停止 コマンド
+# =================================
 be-stop: ## backendコンテナ停止
 	docker stop ${DOCKER_BACKEND_CONTAINER} 
 
@@ -63,6 +69,9 @@ mysql-stop: ## mysqlコンテナ停止
 redis-stop: ## redisコンテナ停止
 	docker stop ${DOCKER_REDIS_CONTAINER} 
 
+# =================================
+# コンテナ再起動 コマンド
+# =================================
 be-restart: ## backendコンテナ再起動
 	docker restart ${DOCKER_BACKEND_CONTAINER} 
 
@@ -75,6 +84,9 @@ mysql-restart: ## mysqlコンテナ再起動
 redis-restart: ## redisコンテナ再起動
 	docker restart ${DOCKER_REDIS_CONTAINER} 
 
+# =================================
+# コンテナ削除 コマンド
+# =================================
 be-down: ## backendコンテナ削除
 	docker stop ${DOCKER_BACKEND_CONTAINER} 
 	docker rm   ${DOCKER_BACKEND_CONTAINER} 
@@ -91,5 +103,17 @@ redis-down: ## redisコンテナ削除
 	docker stop ${DOCKER_REDIS_CONTAINER} 
 	docker rm   ${DOCKER_REDIS_CONTAINER} 
 
+# =================================
+# コンテナログ確認 コマンド
+# =================================
+be-logs: ## backendコンテナログ確認
+	docker logs -f ${DOCKER_BACKEND_CONTAINER} 
 
+fe-logs: ## frontendコンテナログ確認
+	docker logs -f ${DOCKER_FRONTEND_CONTAINER} 
 
+mysql-logs: ## mysqlコンテナログ確認
+	docker logs -f ${DOCKER_MYSQL_CONTAINER} 
+
+redis-logs: ## redisコンテナログ確認
+	docker logs -f ${DOCKER_REDIS_CONTAINER} 

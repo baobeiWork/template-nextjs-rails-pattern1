@@ -1,7 +1,19 @@
 #!/bin/sh
 
-echo "初期構築モード: コンテナは起動中ですが処理は未実行です"
-echo "ターミナルから docker-compose exec で入り、初期構築を進めてください"
+# Install Package
+yarn install
 
-# 無限待機（ホスト側で手動作業を許容）
-tail -f /dev/null
+# Start the application
+if [ "$NEXT_ENV" = "development" ]; then
+  echo "Environment is development, starting yarn dev..."
+  yarn dev 
+elif [ "$NEXT_ENV" = "staging" ]; then
+  echo "Environment is stg, starting yarn stg..."
+  yarn stg 
+elif [ "$NEXT_ENV" = "production" ]; then
+  echo "Environment is production, starting build and start..."
+  yarn build 
+  yarn start
+else
+  echo "Please specify the environment..."
+fi

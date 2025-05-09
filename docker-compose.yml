@@ -41,7 +41,7 @@ services:
       - DATABASE_USER=${MYSQL_ROOT_USER}
       - DATABASE_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - DATABASE_NAME=${MYSQL_DATABASE}
-      - DATABASE_HOST=db
+      - DATABASE_HOST=mysql
       - RAILS_ENV=${RAILS_ENV}
       - RAILS_TEST_EXPORT_ROOT=./document/test/unit/backend
       - REDIS_URL=redis://redis:6379/0

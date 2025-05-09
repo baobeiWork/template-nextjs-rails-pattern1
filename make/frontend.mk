@@ -37,3 +37,21 @@ fe-init: ## frontend 初期構築 [ yarn install + ディレクトリセット�
 	docker exec $(DOCKER_FRONTEND_CONTAINER) yarn install
 
 	@echo "frontend 初期化完了しました"
+
+fe-update-entrypoint: ## frontend entrypoint.shを切り替え (基本的には初期構築時のみ利用)
+ifndef type
+	$(error 切り替えるentrypoint typeが指定されていません: make fe-update-entrypoint type=initial または type=deploy)
+endif
+	@if [ "$(type)" = "initial" ]; then \
+		src=infrastructure/shell/frontend/initial/entrypoint.sh; \
+	elif [ "$(type)" = "deploy" ]; then \
+		src=infrastructure/shell/frontend/deploy/entrypoint.sh; \
+	else \
+		echo "モードは initial または deploy のみ対応しています: type=$(type)"; \
+		exit 1; \
+	fi; \
+	echo "entrypoint.sh を $(type) に切り替えます"; \
+	cp -a $$src infrastructure/shell/frontend/entrypoint.sh;  \
+	docker cp $$src $(DOCKER_FRONTEND_CONTAINER):/usr/bin/entrypoint.sh; \
+	docker-compose exec frontend chmod +x /usr/bin/entrypoint.sh; \
+	echo "$(type) entrypoint に切り替えました。frontendコンテナを再起動してください。"

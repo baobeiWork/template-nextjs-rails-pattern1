@@ -52,5 +52,5 @@ COPY ./backend /backend
 COPY ./infrastructure/shell/backend/entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/*
 
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["/usr/bin/entrypoint.sh"]
 EXPOSE 3000
