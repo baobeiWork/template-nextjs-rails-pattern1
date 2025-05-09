@@ -66,6 +66,8 @@
 
 2. 正常にIndexページが表示されることを確認してください。
 
+<img src="./img/11/next.js.png" alt="" width="auto">
+
 <br>
 <br>
 
