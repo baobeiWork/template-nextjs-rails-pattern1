@@ -74,4 +74,11 @@ Test
 
 （The following items are currently being prepared.）
 
-* [makeコマンド一覧（Make Commands List）]() <- コンテンツ準備中
+* [makeコマンド一覧（Make Commands List）](./) <- コンテンツ準備中
+* [フロントエンドTips](./) <- コンテンツ準備中
+* [バックエンドTips](,/) <- コンテンツ準備中
+
+## お問い合わせ（）
+
+* コンテンツ準備中
+
