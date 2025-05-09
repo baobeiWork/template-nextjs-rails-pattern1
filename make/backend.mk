@@ -29,12 +29,12 @@ be-init: ## backend 初期構築 [ Rails new apiモード ] ()
 		initial-temp/Gemfile \
 		initial-temp/Gemfile.lock
 	docker exec $(DOCKER_BACKEND_CONTAINER) /bin/bash -c 'mv /backend/initial-temp/* /backend/'
-	docker exec $(DOCKER_BACKEND_CONTAINER) rmdir initial-temp
+	docker exec $(DOCKER_BACKEND_CONTAINER) rm -rf initial-temp
 	docker exec $(DOCKER_BACKEND_CONTAINER) bundle install
 	
 	@echo "初期化完了しました"
 
-be-updates-entrypoint: ## backend entrypoint.shを切り替え (基本的には初期構築時のみ利用)
+be-update-entrypoint: ## backend entrypoint.shを切り替え (基本的には初期構築時のみ利用)
 ifndef type
 	$(error 切り替えるentrypoint typeが指定されていません: make be-switch-entrypoint type=initial または type=deploy)
 endif
@@ -47,7 +47,7 @@ endif
 		exit 1; \
 	fi; \
 	echo "entrypoint.sh を $(type) に切り替えます"; \
-	cp -a $$src infrastructure/shell/backend/entrypoint.sh \
-	docker cp $$src $$(docker-compose ps -q backend):/usr/bin/entrypoint.sh; \
+	cp -a $$src infrastructure/shell/backend/entrypoint.sh; \
+	docker cp $$src $(DOCKER_BACKEND_CONTAINER):/usr/bin/entrypoint.sh; \
 	docker-compose exec backend chmod +x /usr/bin/entrypoint.sh; \
 	echo "$(type) entrypoint に切り替えました。backendコンテナを再起動してください。"

@@ -52,6 +52,6 @@ endif
 	fi; \
 	echo "entrypoint.sh を $(type) に切り替えます"; \
 	cp -a $$src infrastructure/shell/frontend/entrypoint.sh;  \
-	docker cp $$src $$(docker-compose ps -q frontend):/usr/bin/entrypoint.sh; \
+	docker cp $$src $(DOCKER_FRONTEND_CONTAINER):/usr/bin/entrypoint.sh; \
 	docker-compose exec frontend chmod +x /usr/bin/entrypoint.sh; \
 	echo "$(type) entrypoint に切り替えました。frontendコンテナを再起動してください。"

@@ -1,10 +1,7 @@
 #!/bin/bash
 
-# Railsアプリがまだない場合は無限待機
-if [ ! -f "config.ru" ]; then
-  echo "コンテナ内で rails new を実行してください。"
-  tail -f /dev/null
-else
-  echo "Railsアプリを起動します..."
-  bundle exec rails server -b 0.0.0.0
-fi
+echo "初期構築モード: コンテナは起動中ですが処理は未実行です"
+echo "be-initを実行してください。"
+
+# 無限待機（ホスト側で手動作業を許容）
+tail -f /dev/null
