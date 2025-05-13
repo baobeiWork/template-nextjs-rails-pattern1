@@ -29,15 +29,30 @@ Swagger形式で統一・横断的な単体テストドキュメント・テス�
 
 ### 2.1.構成
 
-| 項目         | 内容                             |
-| ---------- | ------------------------------ |
-| テストフレームワーク | RSpec                          |
-| スキーマファイル   | `document/swagger/openapi.yml` |
-| 参照方法       | `yaml`として読み込み、request specで検証  |
-
+| 項目         | 内容                              |
+| ---------- | ------------------------------- |
+| テストフレームワーク | Jest                            |
+| スキーマファイル   | `document/swagger/openapi.yml`  |
+| 参照方法       | `js-yaml`等を用いて解析し、mock作成や型生成に活用 |
 
 ### 2.2.設定
+下記のファイルを修正してください。
 
+* frontend/__tests__/swagger.spec.ts
+
+	```ts
+	import fs from 'fs';
+	import yaml from 'js-yaml';
+
+	describe('OpenAPI仕様チェック', () => {
+		it('openapi.ymlが正しい形式であること', () => {
+			const file = fs.readFileSync('document/swagger/openapi.yml', 'utf8');
+			const spec = yaml.load(file) as any;
+			expect(spec.openapi).toBe('3.0.0');
+		});
+	});
+
+	```
 
 
 <br>
@@ -48,14 +63,31 @@ Swagger形式で統一・横断的な単体テストドキュメント・テス�
 
 ### 2.1.構成
 
-| 項目         | 内容                              |
-| ---------- | ------------------------------- |
-| テストフレームワーク | Jest                            |
-| スキーマファイル   | `document/swagger/openapi.yml`  |
-| 参照方法       | `js-yaml`等を用いて解析し、mock作成や型生成に活用 |
+| 項目         | 内容                             |
+| ---------- | ------------------------------ |
+| テストフレームワーク | RSpec                          |
+| スキーマファイル   | `document/swagger/openapi.yml` |
+| 参照方法       | `yaml`として読み込み、request specで検証  |
 
 
 ### 2.2.設定
+
+下記のファイルを修正してください。
+
+* spec/requests/api_spec.rb
+
+	```ruby
+	# spec/requests/api_spec.rb
+	require 'swagger_helper'
+
+	RSpec.describe 'APIドキュメント整合性確認', type: :request do
+		it 'openapi.ymlがパースできること' do
+			yaml_path = Rails.root.join('../../document/swagger/openapi.yml')
+			spec = YAML.load_file(yaml_path)
+			expect(spec['openapi']).to eq('3.0.0')
+		end
+	end
+	```
 
 
 

@@ -25,7 +25,7 @@ fe-init: ## frontend 初期構築 [ yarn install + ディレクトリセット�
 		/frontend/initial-temp/yarn.lock \
 		/frontend/node_modules
 
-	docker exec $(DOCKER_FRONTEND_CONTAINER) /bin/bash -c 'mv /frontend/initial-temp/* /frontend/'
+	docker exec $(DOCKER_FRONTEND_CONTAINER) /bin/bash -c 'mv /frontend/initial-temp/{*,.*} /frontend/' 2>/dev/null || true
 	docker exec $(DOCKER_FRONTEND_CONTAINER) rmdir /frontend/initial-temp
 	docker exec $(DOCKER_FRONTEND_CONTAINER) /bin/bash -c '\
 		mkdir -p /frontend/src/components/{ui,common,layout} && \
@@ -34,6 +34,7 @@ fe-init: ## frontend 初期構築 [ yarn install + ディレクトリセット�
 		mkdir -p /frontend/src/styles && \
 		mkdir -p /frontend/src/types \
 	'
+	docker exec $(DOCKER_FRONTEND_CONTAINER) mkdir -p frontend/__tests__/swagger.spec.ts frontend/__mocks__/
 	docker exec $(DOCKER_FRONTEND_CONTAINER) yarn install
 
 	@echo "frontend 初期化完了しました"
